@@ -1,16 +1,17 @@
+/**
+this pipeline run a nodejs command (node --version) using nodejs pluging inside host
+first install NodeJS tool, then go to global tools configuration 
+and choose nodejs version that you need 
+name this tool as 'node'  
+**/
+
 pipeline {
     agent any
     tools {nodejs 'node'}
     stages {
-        stage (example_1){
+        stage ("first stage"){
             steps {
-                sh "npm config ls"
-                sh "echo 'ji younes'"
-            }
-        }
-        stage (example_2){
-            steps{
-                sh "java -version"
+                sh "node --version"
             }
         }
     }
